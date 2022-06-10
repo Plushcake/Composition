@@ -24,16 +24,6 @@ public class FilmManager {
         return result;
     }
 
-    public ListFilms[] getAllLimit() { //С лимитом.
-        ListFilms[] playbill = repository.findAll();
-        ListFilms[] result = new ListFilms[5];
-        for (int i = 0; i < result.length; i++) {
-            int index = playbill.length - i - 1;
-            result[i] = playbill[index];
-        }
-        return result;
-    }
-
     public void removedById(int id) {
 
         repository.removeById(id);

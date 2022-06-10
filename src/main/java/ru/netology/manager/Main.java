@@ -36,8 +36,6 @@ public class Main {
 
         ListFilms[] all = manager.getAll(); //Отдает в обратном порядке.
 
-        ListFilms[] allLimit = manager.getAllLimit();
-
         int sum = manager.sum(); // Читает сумму и отдает ее.
 
     }

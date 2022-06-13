@@ -49,14 +49,42 @@ class FilmRepositoryTest {
         repo.save(film3);
         repo.save(film4);
         repo.save(film5);
+        repo.save(film6);
+        repo.save(film7);
+        repo.save(film8);
+        repo.save(film9);
+        repo.save(film10);
 
         repo.removeById(105);
 
         ListFilms[] actual = repo.findAll();
-        ListFilms[] expected = {film1, film2, film3, film4};
+        ListFilms[] expected = {film1, film2, film3, film4, film6, film7, film8, film9, film10};
 
         Assertions.assertArrayEquals(expected, actual);
 
     }
 
+    @Test
+    public void test3Repository() {
+        FilmRepository repo = new FilmRepository();
+
+        repo.save(film1);
+        repo.save(film2);
+        repo.save(film3);
+        repo.save(film4);
+        repo.save(film5);
+        repo.save(film6);
+        repo.save(film7);
+        repo.save(film8);
+        repo.save(film9);
+        repo.save(film10);
+
+        repo.removeById(108);
+        repo.removeById(109);
+
+        ListFilms[] actual = repo.findAll();
+        ListFilms[] expected = {film1, film2, film3, film4, film5, film6, film7, film10};
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }

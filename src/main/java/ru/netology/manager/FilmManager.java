@@ -14,9 +14,19 @@ public class FilmManager {
         repository.save(item);
     }
 
-    public ListFilms[] getAll() { //Реверсированние массива.
+    public ListFilms[] findLast() { //Реверсированние массива.
         ListFilms[] playbill = repository.findAll();
         ListFilms[] result = new ListFilms[playbill.length];
+        for (int i = 0; i < result.length; i++) {
+            int index = playbill.length - i - 1; //Берем размер массива(playbill.length). Ячейка куда хотим скопировать(i) и минус один (Потому что начинаеться с нуля).
+            result[i] = playbill[index];
+        }
+        return result;
+    }
+
+    public ListFilms[] findLastLimit() { //Реверсированние массива с лимитом в 10..
+        ListFilms[] playbill = repository.findAll();
+        ListFilms[] result = new ListFilms[10];
         for (int i = 0; i < result.length; i++) {
             int index = playbill.length - i - 1; //Берем размер массива(playbill.length). Ячейка куда хотим скопировать(i) и минус один (Потому что начинаеться с нуля).
             result[i] = playbill[index];
@@ -29,11 +39,4 @@ public class FilmManager {
         repository.removeById(id);
     }
 
-    public int sum() {
-        int result = 0;
-        for (ListFilms item : repository.findAll()) {
-            result = result + item.getProductPrice() * item.getCount();
-        }
-        return result;
-    }
 }

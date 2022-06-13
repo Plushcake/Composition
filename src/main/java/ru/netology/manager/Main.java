@@ -34,11 +34,9 @@ public class Main {
         manager.add(film10);
 
 
-        ListFilms[] all = manager.getAll(); //Отдает в обратном порядке.
-
-        int sum = manager.sum(); // Читает сумму и отдает ее.
+        ListFilms[] all = manager.findLast();//Отдает в обратном порядке.
+        ListFilms[] allLimit = manager.findLastLimit();
 
     }
-
 
 }

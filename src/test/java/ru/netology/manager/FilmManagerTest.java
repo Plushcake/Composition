@@ -39,7 +39,7 @@ public class FilmManagerTest {
 
         verify(repository).findAll();//Проверка что repository вызывал findAll. Если его не вызвать то сборка валиться.
     }
-    @Test
+   /* @Test
     public void test2FilmManegerLimit() {
         ListFilms[] returned = {film1, film2, film3, film4, film5, film6, film7, film8, film9, film10};
         doReturn(returned).when(repository).findAll();
@@ -50,5 +50,5 @@ public class FilmManagerTest {
         assertArrayEquals(actual, expected);
 
         verify(repository).findAll();
-    }
+    }*/
 }

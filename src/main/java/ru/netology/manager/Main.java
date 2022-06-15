@@ -35,7 +35,7 @@ public class Main {
 
 
         ListFilms[] all = manager.findLast();//Отдает в обратном порядке.
-        ListFilms[] allLimit = manager.findLastLimit();
+        //ListFilms[] allLimit = manager.findLastLimit();
 
     }
 

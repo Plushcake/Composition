@@ -24,7 +24,7 @@ public class FilmManager {
         return result;
     }
 
-    public ListFilms[] findLastLimit() { //Реверсированние массива с лимитом в 10..
+    /*public ListFilms[] findLastLimit() { //Реверсированние массива с лимитом в 10..
         ListFilms[] playbill = repository.findAll();
         ListFilms[] result = new ListFilms[10];
         for (int i = 0; i < result.length; i++) {
@@ -32,7 +32,7 @@ public class FilmManager {
             result[i] = playbill[index];
         }
         return result;
-    }
+    }*/
 
     public void removedById(int id) {
 

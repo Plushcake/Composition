@@ -1,11 +1,12 @@
-package ru.netology.repository;
+package ru.netology.manager;
 
 import ru.netology.domain.ListFilms;
 
-public class FilmRepository { //Занимаеться запоминанием. Помошник менеджера.
+public class ListFilmsManager {
+
     private ListFilms[] playbill = new ListFilms[0];
 
-    public void save(ListFilms item) {
+    public void add(ListFilms item) {
         int length = playbill.length + 1;//Длинна нового массива.
         ListFilms[] tmp = new ListFilms[length];//Создаеться новый массив.
         System.arraycopy(playbill, 0, tmp, 0, playbill.length);
@@ -17,23 +18,18 @@ public class FilmRepository { //Занимаеться запоминанием.
 
     }
 
-    public ListFilms[] findAll() {
+    public ListFilms[] findLast() { //Добавленных фильмов в обратном от добавления порядке.
+        ListFilms[] playbill = findAll();
+        ListFilms[] result = new ListFilms[playbill.length];
+        for (int i = 0; i < result.length; i++) {
+            int index = playbill.length - i - 1; //Берем размер массива(playbill.length). Ячейка куда хотим скопировать(i) и минус один (Потому что начинаеться с нуля).
+            result[i] = playbill[index];
+        }
+        return result;
+    }
 
+    public ListFilms[] findAll() { //Вывод всех фильмов в порядке добавления.
         return playbill;
     }
-
-    public void removeById(int id) {
-        int lenght = playbill.length - 1;
-        ListFilms[] tmp = new ListFilms[lenght];
-        int index = 0;
-        for (ListFilms item : playbill) {
-            if (item.getId() != id) {
-                tmp[index] = item;
-                index++;
-            }
-        }
-        playbill = tmp;
-    }
-
 
 }

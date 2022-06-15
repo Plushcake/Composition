@@ -1,7 +1,6 @@
 package ru.netology.manager;
 
 import ru.netology.domain.ListFilms;
-import ru.netology.repository.FilmRepository;
 
 public class Main {
 
@@ -18,14 +17,13 @@ public class Main {
         ListFilms film9 = new ListFilms(109, 9, "Ну погоди", 400, 5);
         ListFilms film10 = new ListFilms(110, 10, "Рататуй - Конец.", 400, 4);
 
-
-        FilmRepository repo = new FilmRepository();
-        FilmManager manager = new FilmManager(repo);
+        ListFilmsManager manager = new ListFilmsManager();
 
         manager.add(film1);
         manager.add(film2);
         manager.add(film3);
         manager.add(film4);
+        manager.add(film5);
         manager.add(film5);
         manager.add(film6);
         manager.add(film7);
@@ -33,9 +31,7 @@ public class Main {
         manager.add(film9);
         manager.add(film10);
 
-
         ListFilms[] all = manager.findLast();//Отдает в обратном порядке.
-        //ListFilms[] allLimit = manager.findLastLimit();
 
     }
 

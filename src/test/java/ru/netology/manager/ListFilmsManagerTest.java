@@ -93,6 +93,17 @@ class ListFilmsManagerTest {
     }
 
     @Test
+    public void test5FindLast() {
+        ListFilmsManager manager = new ListFilmsManager();
+
+
+        ListFilms[] actual = manager.findLast();
+        ListFilms[] expected = {};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
     public void testFindAll() {
         ListFilmsManager manager = new ListFilmsManager();
         manager.add(film1);

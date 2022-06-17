@@ -4,8 +4,9 @@ import ru.netology.domain.ListFilms;
 
 public class ListFilmsManager {
 
-    private  int countFilms = 10;
+    private int countFilms = 10;
     private ListFilms[] playbill = new ListFilms[0];
+
     public void add(ListFilms item) {
         int length = playbill.length + 1;//Длинна нового массива.
         ListFilms[] tmp = new ListFilms[length];//Создаеться новый массив.____[length]
@@ -23,7 +24,7 @@ public class ListFilmsManager {
         int valueLimit = playbill.length;
         if (valueLimit >= countFilms) {
             valueLimit = countFilms;
-        }else {
+        } else {
             valueLimit = playbill.length;
         }
 

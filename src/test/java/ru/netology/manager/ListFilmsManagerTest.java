@@ -19,6 +19,7 @@ class ListFilmsManagerTest {
     ListFilms film8 = new ListFilms(108, 8, "Я-легенда", 600, 3);
     ListFilms film9 = new ListFilms(109, 9, "Ну погоди", 400, 5);
     ListFilms film10 = new ListFilms(110, 10, "Рататуй - Конец.", 400, 4);
+    ListFilms film11 = new ListFilms(110, 11, "Терминатор", 500, 6);
 
     @Test
     public void test1FindLast() {
@@ -42,7 +43,57 @@ class ListFilmsManagerTest {
     }
 
     @Test
-    public void test2findAll() {
+    public void test2FindLast() {
+        ListFilmsManager manager = new ListFilmsManager();
+        manager.add(film1);
+
+
+        ListFilms[] actual = manager.findLast();
+        ListFilms[] expected = {film1};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void test3FindLast() {
+        ListFilmsManager manager = new ListFilmsManager();
+        manager.add(film1);
+        manager.add(film2);
+        manager.add(film3);
+        manager.add(film4);
+        manager.add(film5);
+
+
+        ListFilms[] actual = manager.findLast();
+        ListFilms[] expected = {film5, film4, film3, film2, film1};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void test4FindLast() {
+        ListFilmsManager manager = new ListFilmsManager();
+        manager.add(film1);
+        manager.add(film2);
+        manager.add(film3);
+        manager.add(film4);
+        manager.add(film5);
+        manager.add(film6);
+        manager.add(film7);
+        manager.add(film8);
+        manager.add(film9);
+        manager.add(film10);
+        manager.add(film11);
+
+
+        ListFilms[] actual = manager.findLast();
+        ListFilms[] expected = {film11, film10, film9, film8, film7, film6, film5, film4, film3, film2};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void testFindAll() {
         ListFilmsManager manager = new ListFilmsManager();
         manager.add(film1);
         manager.add(film2);

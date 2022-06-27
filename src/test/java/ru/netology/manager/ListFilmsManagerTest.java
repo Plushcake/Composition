@@ -19,7 +19,7 @@ class ListFilmsManagerTest {
     ListFilms film8 = new ListFilms(108, 8, "Я-легенда", 600, 3);
     ListFilms film9 = new ListFilms(109, 9, "Ну погоди", 400, 5);
     ListFilms film10 = new ListFilms(110, 10, "Рататуй - Конец.", 400, 4);
-    ListFilms film11 = new ListFilms(110, 11, "Терминатор", 500, 6);
+    ListFilms film11 = new ListFilms(111, 11, "Терминатор", 500, 6);
 
     @Test
     public void test1FindLast() {

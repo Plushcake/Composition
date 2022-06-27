@@ -3,9 +3,14 @@ package ru.netology.manager;
 import ru.netology.domain.ListFilms;
 
 public class ListFilmsManager {
-
-    private int countFilms = 10;
     private ListFilms[] playbill = new ListFilms[0];
+    private int limit;
+
+    public ListFilmsManager() {
+        limit = 10;
+
+    }
+
 
     public void add(ListFilms item) {
         int length = playbill.length + 1;//Длинна нового массива.
@@ -21,15 +26,13 @@ public class ListFilmsManager {
 
     public ListFilms[] findLast() { //Добавления в обратном порядке.
         ListFilms[] playbill = findAll();
-        int valueLimit = playbill.length;
-        if (valueLimit >= countFilms) {
-            valueLimit = countFilms;
+        ListFilms[] result;
+        if (limit < playbill.length) {
+            result = new ListFilms[limit];
         } else {
-            valueLimit = playbill.length;
+            result = new ListFilms[playbill.length];
         }
-
-        ListFilms[] result = new ListFilms[valueLimit]; //[playbill.length]
-        for (int i = 0; i < valueLimit; i++) {
+        for (int i = 0; i < result.length; i++) {
             int index = playbill.length - i - 1; //Берем размер массива(playbill.length). Ячейка куда хотим скопировать(i) и минус один (Потому что начинаеться с нуля).
             result[i] = playbill[index];
         }

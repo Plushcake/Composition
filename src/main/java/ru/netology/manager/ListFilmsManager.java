@@ -8,7 +8,10 @@ public class ListFilmsManager {
 
     public ListFilmsManager() {
         limit = 10;
+    }
 
+    public ListFilmsManager(int limit) {
+        this.limit = limit;
     }
 
 
